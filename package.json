@@ -1,0 +1,30 @@
+{
+  "name": "cra-template-neti",
+  "version": "2.0.1",
+  "description": "Стартовый шаблон для WEB на основе CRA + TypeScript",
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NETI-MOBILE/cra-template-neti.git"
+  },
+  "keywords": [
+    "react",
+    "create-react-app",
+    "template",
+    "typescript",
+    "neti",
+    "web"
+  ],
+  "author": "Hatam Soyunov <ksoyunov@i-neti.ru>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "bugs": {
+    "url": "https://github.com/NETI-MOBILE/cra-template-neti/-/issues"
+  },
+  "homepage": "https://github.com/NETI-MOBILE/cra-template-neti"
+}
