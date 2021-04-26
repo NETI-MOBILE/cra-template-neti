@@ -1,7 +1,7 @@
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, RedirectProps } from 'react-router-dom';
 
-import PageTitle from './PageTitle';
 import { IRole, IRoute, RoleKeys } from '../types/RouteTypes';
+import PageTitle from './PageTitle';
 
 interface IRoutes {
   [key: string]: IRoute;
@@ -11,6 +11,7 @@ interface IRoutesProps {
   routes: IRoutes;
   role?: RoleKeys;
   disableRedirect?: boolean;
+  redirectProps?: { to: RedirectProps['to'] };
 }
 
 // Check roles
@@ -20,7 +21,7 @@ const isSatisfied = (role: RoleKeys, credentials: IRole[]): boolean => {
   return mappedCredentials.includes(role);
 };
 
-const Routes: React.FC<IRoutesProps> = ({ routes, role, disableRedirect }) => {
+const Routes: React.FC<IRoutesProps> = ({ routes, role, disableRedirect, redirectProps }) => {
   const routesArray = Object.values(routes);
 
   const renderRouteChildren = (route: IRoute) => {
@@ -47,7 +48,7 @@ const Routes: React.FC<IRoutesProps> = ({ routes, role, disableRedirect }) => {
       return renderRouteComponent();
     }
 
-    return <Redirect to={routes.NotFoundScreen.path} />;
+    return <Redirect to={redirectProps ? redirectProps.to : routes.NotFoundScreen.path} />;
   };
 
   return (
@@ -65,7 +66,7 @@ const Routes: React.FC<IRoutesProps> = ({ routes, role, disableRedirect }) => {
 
         {!disableRedirect && (
           <Route path="*">
-            <Redirect to={routes.NotFoundScreen.path} />
+            <Redirect to={redirectProps ? redirectProps.to : routes.NotFoundScreen.path} />
           </Route>
         )}
       </Switch>
