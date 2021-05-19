@@ -4,12 +4,6 @@ export default abstract class AbstractFactory {
   }
 
   createList<T>(Model: any, data: any): T[] {
-    let items: T[] = [];
-
-    data.forEach((json: any) => {
-      items.push(new Model(json));
-    });
-
-    return items;
+    return data.map((json: any) => new Model(json));
   }
 }
