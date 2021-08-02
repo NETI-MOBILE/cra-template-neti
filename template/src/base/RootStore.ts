@@ -1,5 +1,6 @@
 import React from 'react';
-// import { AuthStore } from '../modules/auth/stores/AuthStore';
+
+// import { AuthStore } from 'modules/auth/stores/AuthStore';
 
 class RootStore {
   // authStore: AuthStore;

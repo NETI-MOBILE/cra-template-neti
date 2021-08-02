@@ -1,4 +1,5 @@
-import { RoutesType } from '../base/routes/types/RouteTypes';
+import { RoutesType } from 'base/routes/types/RouteTypes';
+
 import MainScreen from './main/MainScreen';
 import NotFoundScreen from './not-found/NotFoundScreen';
 

@@ -1,14 +1,15 @@
+import { CssBaseline, ThemeProvider } from '@material-ui/core';
+import { configure } from 'mobx';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import { configure } from 'mobx';
-import { Router } from 'react-router-dom';
-import { CssBaseline, ThemeProvider } from '@material-ui/core';
 // import * as Sentry from '@sentry/browser';
+import { Router } from 'react-router-dom';
+
+import history from 'base/routes/history';
+import { theme } from 'styles/muiTheme';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import history from './base/routes/history';
-import { theme } from './styles/muiTheme';
 
 // StrictMode для Mobx
 configure({ enforceActions: 'observed' });

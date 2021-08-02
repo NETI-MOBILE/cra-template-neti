@@ -8,5 +8,11 @@
   "bracketSpacing": true,
   "jsxBracketSameLine": false,
   "arrowParens": "avoid",
-  "proseWrap": "always"
+  "proseWrap": "always",
+  "importOrder": [
+    "^base/|^components/|^helpers/|^hooks/|^modules/|^screens/|^styles/|^utils/",
+    "^[./]",
+    "^assets/"
+  ],
+  "importOrderSeparation": true
 }

@@ -1,6 +1,6 @@
 {
   "name": "cra-template-neti",
-  "version": "2.0.3",
+  "version": "2.1.3",
   "description": "Стартовый шаблон для WEB на основе CRA + TypeScript",
   "files": [
     "template",

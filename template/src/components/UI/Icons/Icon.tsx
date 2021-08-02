@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
 import SvgIcon, { SvgIconProps } from '@material-ui/core/SvgIcon';
+import { ReactNode } from 'react';
 
 interface IIconProps extends SvgIconProps {
   component: ReactNode;
