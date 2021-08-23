@@ -1,6 +1,6 @@
 import { Button, ButtonProps, useTheme } from '@material-ui/core';
 
-import Notification from 'utils/NotificationUtil';
+import Notification from 'base/utils/NotificationUtil';
 
 import Loader from './Loader';
 
