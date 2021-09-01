@@ -1,6 +1,6 @@
+import { ApiClientTypes } from './ApiClientTypes';
 import IApiClient from './IApiClient';
 import AxiosClient from './axios/AxiosClient';
-import { ApiClientTypes } from './ApiClientTypes';
 
 export default abstract class AbstractApiRepository {
   apiClient!: IApiClient;

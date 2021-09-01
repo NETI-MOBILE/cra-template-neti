@@ -1,9 +1,9 @@
 export default abstract class AbstractModel {
-  getAttributes() {
+  getAttributes(): string[] {
     return Object.keys(this);
   }
 
-  load(data: any) {
+  load(data: any): void {
     this.getAttributes().forEach(attribute => {
       if (data && data.hasOwnProperty(attribute)) {
         // @ts-ignore

@@ -13,7 +13,7 @@ const Loader: React.FC<ILoaderProps> = ({ size = 40, minHeight = 0, isAbsolute =
 
   const rendeLoader = () => {
     return (
-      <Grid container justify="center" alignItems="center">
+      <Grid container justifyContent="center" alignItems="center">
         <Box display="flex" color={color || palette.primary.main}>
           <CircularProgress size={size} color="inherit" />
         </Box>

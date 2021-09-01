@@ -1,5 +1,5 @@
-import clsx from 'clsx';
 import { makeStyles, Button, ButtonProps, Theme } from '@material-ui/core';
+import clsx from 'clsx';
 
 interface ITextButtonProps extends ButtonProps {
   lowercase?: boolean;

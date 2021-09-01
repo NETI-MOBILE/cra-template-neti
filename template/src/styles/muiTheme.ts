@@ -74,6 +74,12 @@ export const theme = createTheme({
         },
       },
     },
+    MuiFormLabel: {
+      root: {
+        display: 'block',
+        marginBottom: 8,
+      },
+    },
     // MuiAutocomplete: {
     //   root: {}
     // }

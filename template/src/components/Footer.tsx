@@ -4,13 +4,13 @@ const Footer: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.root}>
+    <footer className={classes.root}>
       <Container maxWidth="xl">
         <Box py={3} minHeight={60}>
           <Typography>Footer</Typography>
         </Box>
       </Container>
-    </Box>
+    </footer>
   );
 };
 
