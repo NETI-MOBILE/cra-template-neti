@@ -1,17 +1,17 @@
-import { store, ReactNotificationOptions } from 'react-notifications-component';
+import { Store, NOTIFICATION_TYPE, iNotification, NOTIFICATION_CONTAINER } from 'react-notifications-component';
 
 interface INotificationProps {
-  type: ReactNotificationOptions['type'];
+  type: NOTIFICATION_TYPE;
   message: string;
-  container?: ReactNotificationOptions['container'];
+  container?: NOTIFICATION_CONTAINER;
   duration?: number;
 }
 
 export default class Notification {
-  static addNotification = (options: ReactNotificationOptions) => {
+  static addNotification = (options: iNotification) => {
     const { type, message, container, dismiss, slidingExit, ...rest } = options;
 
-    store.addNotification({
+    Store.addNotification({
       message: message,
       type: type,
       insert: 'top',
@@ -19,6 +19,7 @@ export default class Notification {
       animationIn: ['animated', 'fadeIn'],
       animationOut: ['animated', 'fadeOut'],
       dismiss: {
+        duration: 5000,
         onScreen: true,
         showIcon: true,
         ...dismiss,

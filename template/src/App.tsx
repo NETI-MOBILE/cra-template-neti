@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import { useEffect } from 'react';
-import ReactNotification from 'react-notifications-component';
+import { ReactNotifications } from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css';
 import { authRotes, routes } from 'routes/routes';
 
@@ -25,7 +25,7 @@ const App: React.FC = observer(() => {
           <Routes routes={routes} />
         </BaseLayout>
 
-        <ReactNotification />
+        <ReactNotifications />
       </>
     );
   };
@@ -35,7 +35,7 @@ const App: React.FC = observer(() => {
       <>
         <Routes redirectProps={{ to: authRotes.LoginScreen.path }} routes={authRotes} />
 
-        <ReactNotification />
+        <ReactNotifications />
       </>
     );
   };
