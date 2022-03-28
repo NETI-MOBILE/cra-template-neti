@@ -1,5 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 
+import ErrorsService from 'base/modules/errors/ErrorsService';
+
 import AuthService from './AuthService';
 import LoginDto from './forms/LoginDto';
 import RegisterDto from './forms/RegisterDto';
@@ -7,18 +9,20 @@ import TokenService from './modules/token/TokenService';
 
 export class AuthStore {
   loading = false;
-  errorMessages: any = {};
+  errorMessages: any | null = null;
 
   isAuth = false;
   completeCheckAuth = false;
 
   private authService: AuthService;
   private tokenService: TokenService;
+  private errorsService: ErrorsService;
 
   constructor() {
     makeAutoObservable(this);
     this.authService = new AuthService();
     this.tokenService = new TokenService();
+    this.errorsService = new ErrorsService();
   }
 
   register = (values: any): void => {
@@ -34,14 +38,8 @@ export class AuthStore {
           this.setIsAuth(true);
         }
       })
-      .catch((error: any) => {
-        const errors = error?.response?.data?.errors;
-
-        if (errors) {
-          this.setErrors(errors);
-        } else {
-          this.setErrors({});
-        }
+      .catch(error => {
+        this.setErrors(this.errorsService.getErrors(error));
       })
       .finally(() => this.setLoading(false));
   };
@@ -61,14 +59,8 @@ export class AuthStore {
 
         this.resetStore();
       })
-      .catch((error: any) => {
-        const errors = error?.response?.data?.errors;
-
-        if (errors) {
-          this.setErrors(errors);
-        } else {
-          this.setErrors({});
-        }
+      .catch(error => {
+        this.setErrors(this.errorsService.getErrors(error));
       })
       .finally(() => this.setLoading(false));
   };
@@ -114,7 +106,7 @@ export class AuthStore {
     this.isAuth = state;
   };
 
-  setErrors = (errors: Object): void => {
+  setErrors = (errors: any | null): void => {
     this.errorMessages = errors;
   };
 

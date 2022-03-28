@@ -5,4 +5,7 @@ export const appConfig = {
   },
   tokenStorageKey: '_exampleAccessToken', // _[projectName]AccessToken
   siteName: 'Start template Neti',
+  sentrySettings: {
+    dsn: 'project_dsn_link',
+  },
 };

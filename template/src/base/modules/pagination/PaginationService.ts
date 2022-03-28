@@ -1,5 +1,5 @@
-import Pagination from './Pagination';
 import PaginationFactory from './PaginationFactory';
+import PaginationModel from './PaginationModel';
 
 export default class PaginationService {
   paginationFactory: PaginationFactory;
@@ -9,6 +9,6 @@ export default class PaginationService {
   }
 
   getPagination = (pagination: any) => {
-    return this.paginationFactory.create<Pagination>(Pagination, pagination);
+    return this.paginationFactory.create<PaginationModel>(PaginationModel, pagination);
   };
 }

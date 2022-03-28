@@ -7,8 +7,8 @@ interface INotificationProps {
   duration?: number;
 }
 
-class NotificationUtilC {
-  addNotification = (options: ReactNotificationOptions) => {
+export default class Notification {
+  static addNotification = (options: ReactNotificationOptions) => {
     const { type, message, container, dismiss, slidingExit, ...rest } = options;
 
     store.addNotification({
@@ -33,10 +33,10 @@ class NotificationUtilC {
     });
   };
 
-  showNotif = (options: INotificationProps) => {
+  static showNotif = (options: INotificationProps) => {
     const { type, message, container, duration } = options;
 
-    this.addNotification({
+    Notification.addNotification({
       type: type,
       message: message,
       container: container || 'bottom-left',
@@ -46,14 +46,11 @@ class NotificationUtilC {
     });
   };
 
-  showError = (errorMessage: string) => {
-    this.showNotif({ type: 'danger', message: errorMessage });
+  static showError = (errorMessage: string) => {
+    Notification.showNotif({ type: 'danger', message: errorMessage });
   };
 
-  showSuccess = (successMessage: string) => {
-    this.showNotif({ type: 'success', message: successMessage });
+  static showSuccess = (successMessage: string) => {
+    Notification.showNotif({ type: 'success', message: successMessage });
   };
 }
-
-const NotificationUtil = new NotificationUtilC();
-export default NotificationUtil;

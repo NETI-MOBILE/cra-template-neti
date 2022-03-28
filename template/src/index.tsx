@@ -16,7 +16,7 @@ configure({ enforceActions: 'observed' });
 
 // Sentry для продакшна, отлавливает ошибки приложения, включается перед публикацией
 // if (process.env.NODE_ENV === 'production') {
-//     Sentry.init({ dsn: 'project_dsn_link' });
+// Sentry.init(appConfig.sentrySettings);
 // }
 
 ReactDOM.render(

@@ -4,11 +4,12 @@ export default abstract class AbstractModel {
   }
 
   load(data: any): void {
-    this.getAttributes().forEach(attribute => {
-      if (data && data.hasOwnProperty(attribute)) {
-        // @ts-ignore
-        this[attribute] = data[attribute];
+    const attributes = this.getAttributes();
+
+    for (let i = 0; i < attributes.length; i++) {
+      if (data && data.hasOwnProperty(attributes[i])) {
+        this[attributes[i] as keyof this] = data[attributes[i]];
       }
-    });
+    }
   }
 }

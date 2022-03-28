@@ -1,4 +1,4 @@
-import Notification from 'base/utils/NotificationUtil';
+import Notification from 'base/ui/Notification';
 
 export default class ApiHelper {
   static getApiErrors(error: any) {

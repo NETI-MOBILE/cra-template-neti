@@ -1,7 +1,8 @@
+import { appConfig } from 'appConfig';
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from 'axios';
 
-import { appConfig } from '../../../appConfig';
-import Notification from '../../utils/NotificationUtil';
+import Notification from 'base/ui/Notification';
+
 import IApiClient from '../IApiClient';
 import { IAxiosConfig, IAxiosResponse } from './IAxiosInterfaces';
 
